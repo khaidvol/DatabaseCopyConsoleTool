@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DatabaseOperator {
@@ -75,6 +76,9 @@ public class DatabaseOperator {
             logger.error(e.getMessage());
         }
         logger.info(DONE);
+        //sort in lexicographical order according to requirements
+        Collections.sort(tables);
+
         return tables;
     }
 
@@ -127,4 +131,5 @@ public class DatabaseOperator {
         }
         logger.info(DONE);
     }
+
 }
